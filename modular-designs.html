@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modular Designs | Waverley Granny Flats</title>
+<link rel="stylesheet" href="https://www.melbournerenopro.com.au/static/css/all.min.css">
+<style>
+    @charset "UTF-8";
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; color: #333; }
+    
+    .header-container { padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; background-color: #1a1a1a; position: sticky; top: 0; z-index: 1000; }
+    .logo img { max-width: 140px; height: auto; }
+    .desktop-nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+    .desktop-nav a { color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; }
+    .active-tab { color: #B8A88F !important; }
+    .social-links { display: flex; gap: 12px; margin-left: 15px; padding-left: 15px; border-left: 1px solid #333; }
+    .social-links a { color: #fff; font-size: 13px; }
+
+    .sub-hero { padding: 80px 20px; background-color: #fcfcfc; text-align: center; border-bottom: 1px solid #eee; }
+    .content-section { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+    .highlight-box { background: #f9f9f9; padding: 30px; border-left: 3px solid #B8A88F; margin: 30px 0; }
+    .model-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .model-card { border: 1px solid #eee; }
+    .model-card img { width: 100%; height: 350px; object-fit: cover; }
+    @media (max-width: 768px) { .model-grid { grid-template-columns: 1fr; } .social-links { display: none; } }
+</style>
+</head> 
+<body>
+
+<div class="header-container">
+  <div class="logo">
+    <a href="index.html"><img src="https://www.melbournerenopro.com.au/static/upload/image/20250401/1743458027373068.jpg" alt="Waverley Granny Flats"></a>
+  </div>
+  <nav class="desktop-nav">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="modular-designs.html" class="active-tab">MODULAR DESIGNS</a></li>
+      <li><a href="building-process.html">BUILDING PROCESS</a></li>
+      <li>
+        <a href="#">RESOURCES</a>
+        <div class="dropdown-menu" style="display:none;"> <!-- 内部逻辑一致 -->
+          <a href="https://ncc.abcb.gov.au/editions/ncc-2022/adopted/volume-two/preface/copyright-and-licence-notice">NCC 2022</a>
+        </div>
+      </li>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-threads"></i></a>
+      </div>
+    </ul>
+  </nav>
+</div>
+
+<div class="sub-hero">
+  <h1 style="font-weight:300; letter-spacing:4px;">MODULAR ENGINEERING</h1>
+</div>
+
+<div class="content-section">
+  <h2 style="font-weight:400; margin-bottom:20px;">The 60m² Planning Benefit</h2>
+  <p>In Victoria, Small Second Dwellings under 60m² often benefit from Planning Permit exemptions. Our <strong>third-party consultants assist with the paperwork process</strong> to ensure your project moves swiftly through the required <strong>Building Permit</strong> trajectory.</p>
+  
+  <div class="highlight-box">
+    <strong>Independent Professional Assurance:</strong> All structural designs and compliance certifications are provided by independent third-party Architects and Surveyors, ensuring absolute transparency and conflict-free oversight.
+  </div>
+
+  <div class="model-grid">
+    <div class="model-card">
+      <img src="https://www.melbournerenopro.com.au/static/upload/image/20250331/1743408877441469.jpg">
+      <div style="padding:20px;"><h3>Type A Sparrowden</h3><p>20.3m² Studio</p></div>
+    </div>
+    <div class="model-card">
+      <img src="https://www.melbournerenopro.com.au/static/upload/image/20250331/1743400832320396.jpg">
+      <div style="padding:20px;"><h3>Type D Cosybay</h3><p>59.6m² 2-Bedroom</p></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

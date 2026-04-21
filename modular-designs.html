@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modular Designs | Prefab Granny Flat Models Melbourne | Waverley Granny Flats</title>
+<meta name="description" content="Four prefab granny flat designs for Melbourne backyards — studio to 2-bedroom, 20m² to 59m². No planning permit required under 60m². View floor plans and 3D walkthroughs.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+    @charset "UTF-8";
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; color: #333; background-color: #ffffff; -webkit-font-smoothing: antialiased; }
+
+    /* ── Navigation ── */
+    .header-container { padding: 22px 50px; display: flex; justify-content: space-between; align-items: center; background-color: #1a1a1a; position: sticky; top: 0; z-index: 1000; }
+    .logo img { max-width: 140px; height: auto; }
+    .desktop-nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+    .desktop-nav a { color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; transition: color 0.3s; }
+    .desktop-nav a:hover { color: #B8A88F; }
+    .active-tab { color: #B8A88F !important; }
+    .desktop-nav li { position: relative; padding: 10px 0; }
+    .dropdown-menu { display: block; position: absolute; top: 100%; left: 0; opacity: 0; visibility: hidden; background-color: #1a1a1a; min-width: 240px; padding: 15px 0; transition: all 0.3s ease; border-top: 2px solid #B8A88F; }
+    .desktop-nav li:hover .dropdown-menu { opacity: 1; visibility: visible; }
+    .dropdown-menu a { display: block; padding: 10px 25px; font-size: 10px; color: #ccc; }
+    .dropdown-menu a:hover { color: #B8A88F; }
+    .nav-new { background: #B8A88F; color: #1a1a1a !important; font-size: 9px !important; padding: 2px 6px; border-radius: 2px; margin-left: 6px; letter-spacing: 0.5px; vertical-align: middle; }
+    .social-links { display: flex; gap: 15px; margin-left: 15px; padding-left: 15px; border-left: 1px solid #333; }
+    .social-links a { color: #fff; font-size: 14px; transition: color 0.3s; }
+    .social-links a:hover { color: #B8A88F; }
+
+    /* ── Page hero ── */
+    .sub-hero { padding: 80px 20px 70px; background-color: #1a1a1a; text-align: center; }
+    .sub-hero h1 { font-weight: 300; letter-spacing: 4px; text-transform: uppercase; color: #fff; font-size: 32px; margin-bottom: 14px; }
+    .sub-hero p { color: #aaa; font-size: 14px; max-width: 560px; margin: 0 auto; }
+
+    /* ── Permit callout ── */
+    .permit-bar { background: #f9f9f9; border-bottom: 1px solid #eee; padding: 28px 50px; }
+    .permit-bar-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .permit-bar p { font-size: 13px; color: #555; }
+    .permit-bar strong { color: #1a1a1a; }
+    .permit-bar a { color: #B8A88F; text-decoration: none; font-size: 12px; letter-spacing: 1px; white-space: nowrap; }
+    .permit-bar a:hover { text-decoration: underline; }
+
+    /* ── Content ── */
+    .content-section { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+
+    /* ── Why modular ── */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px; align-items: center; }
+    .highlight-box { background: #f9f9f9; padding: 34px; border-left: 3px solid #B8A88F; }
+    .highlight-box h3 { font-size: 15px; font-weight: 500; margin-bottom: 14px; color: #1a1a1a; }
+    .highlight-box p { font-size: 13px; color: #666; line-height: 1.9; }
+
+    /* ── Model cards ── */
+    .models-header { text-align: center; margin-bottom: 50px; }
+    .models-header h2 { font-weight: 300; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; color: #1a1a1a; margin-bottom: 10px; }
+
+    .model-full { border: 1px solid #eee; margin-bottom: 50px; transition: border-color 0.3s; overflow: hidden; }
+    .model-full:hover { border-color: #B8A88F; }
+    .model-full-grid { display: grid; grid-template-columns: 1.4fr 1fr; }
+    .model-full-grid.reverse { direction: rtl; }
+    .model-full-grid.reverse > * { direction: ltr; }
+    .model-images { display: grid; grid-template-columns: 1fr 1fr; }
+    .model-images img { width: 100%; height: 240px; object-fit: cover; display: block; transition: transform 0.5s; }
+    .model-images img:hover { transform: scale(1.02); }
+    .model-detail { padding: 44px 40px; display: flex; flex-direction: column; justify-content: center; }
+    .model-tag { font-size: 10px; color: #B8A88F; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
+    .model-name { font-size: 22px; font-weight: 400; color: #1a1a1a; margin-bottom: 14px; }
+    .model-desc { font-size: 13px; color: #666; line-height: 1.9; margin-bottom: 24px; }
+    .model-specs { display: flex; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
+    .spec-item { text-align: center; }
+    .spec-val { font-size: 20px; font-weight: 300; color: #1a1a1a; }
+    .spec-label { font-size: 10px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+    .model-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-enquire-lg { display: inline-block; background: #1a1a1a; color: #fff; text-decoration: none; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 13px 26px; transition: background 0.3s; }
+    .btn-enquire-lg:hover { background: #333; }
+    .btn-vr { display: inline-block; border: 1px solid #ddd; color: #666; text-decoration: none; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 13px 20px; transition: all 0.3s; }
+    .btn-vr:hover { border-color: #B8A88F; color: #B8A88F; }
+
+    /* ── CTA strip ── */
+    .cta-strip { background: #1a1a1a; padding: 70px 50px; text-align: center; }
+    .cta-strip h2 { color: #fff; font-weight: 300; font-size: 26px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .cta-strip p { color: #aaa; font-size: 14px; margin-bottom: 34px; }
+    .btn-primary { display: inline-block; background: #B8A88F; color: #1a1a1a; text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 16px 36px; transition: background 0.3s; margin: 0 8px; }
+    .btn-primary:hover { background: #c9baa0; }
+    .btn-ghost-dark { display: inline-block; border: 1px solid #444; color: #ccc; text-decoration: none; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 16px 36px; margin: 0 8px; transition: border-color 0.3s; }
+    .btn-ghost-dark:hover { border-color: #B8A88F; color: #B8A88F; }
+
+    /* ── Contact ── */
+    .contact-wrap { background-color: #f9f9f9; padding: 100px 50px; border-top: 1px solid #eee; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; max-width: 1100px; margin: 0 auto; }
+    .contact-info h2 { font-weight: 300; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; font-size: 20px; }
+    .contact-detail { display: flex; align-items: center; gap: 12px; margin: 10px 0; font-size: 14px; color: #555; text-decoration: none; }
+    .contact-detail i { color: #B8A88F; width: 16px; }
+    .contact-form { display: grid; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #999; }
+    .form-group input, .form-group select, .form-group textarea { border: 1px solid #ddd; padding: 12px 14px; font-size: 13px; font-family: inherit; color: #333; background: #fff; transition: border-color 0.3s; outline: none; -webkit-appearance: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #B8A88F; }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .submit-btn { border: none; padding: 14px 40px; cursor: pointer; background: #1a1a1a; color: #fff; letter-spacing: 2px; text-transform: uppercase; font-size: 11px; font-family: inherit; font-weight: 500; transition: background 0.3s; align-self: start; }
+    .submit-btn:hover { background: #333; }
+
+    /* ── Footer ── */
+    .footer-note { text-align: center; padding: 24px 20px; background: #1a1a1a; font-size: 11px; color: #555; }
+    .footer-note a { color: #777; text-decoration: none; }
+    .footer-note a:hover { color: #B8A88F; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+        .why-grid { grid-template-columns: 1fr; }
+        .model-full-grid, .model-full-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+        .model-images { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+        .header-container { padding: 18px 20px; }
+        .permit-bar { padding: 20px; }
+        .model-detail { padding: 30px 24px; }
+        .contact-grid { grid-template-columns: 1fr; }
+        .form-row { grid-template-columns: 1fr; }
+        .social-links { display: none; }
+        .cta-strip { padding: 60px 20px; }
+    }
+    @media (max-width: 480px) {
+        .model-images { grid-template-columns: 1fr; }
+        .model-images img { height: 200px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<div class="header-container">
+  <div class="logo"><a href="index.html"><img src="images/logo.jpg" alt="Waverley Granny Flats"></a></div>
+  <nav class="desktop-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modular-designs.html" class="active-tab">Designs</a></li>
+      <li><a href="building-process.html">Process</a></li>
+      <li>
+        <a href="#">Resources</a>
+        <div class="dropdown-menu">
+          <a href="permit-guide.html">Permit Guide <span class="nav-new">New</span></a>
+          <a href="diy-kit.html">DIY Owner Builder <span class="nav-new">New</span></a>
+          <a href="https://ncc.abcb.gov.au/editions/ncc-2022/adopted/volume-two/preface/copyright-and-licence-notice" target="_blank">NCC 2022 Compliance ↗</a>
+          <a href="#">Project Tracker</a>
+        </div>
+      </li>
+      <li><a href="#Contact" style="color:#B8A88F;">Book a Visit</a></li>
+      <div class="social-links">
+        <a href="https://www.instagram.com/waverleygrannyflats/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.threads.net/@waverleygrannyflat" target="_blank" aria-label="Threads"><i class="fab fa-threads"></i></a>
+      </div>
+    </ul>
+  </nav>
+</div>
+
+<!-- ── Page hero ── -->
+<div class="sub-hero">
+  <h1>Modular Designs</h1>
+  <p>Four models designed for Victorian backyards — from compact studios to full two-bedroom dwellings. All NCC 2022 compliant.</p>
+</div>
+
+<!-- ── Permit callout bar ── -->
+<div class="permit-bar">
+  <div class="permit-bar-inner">
+    <p>Units under <strong>60m²</strong> typically don't need a planning permit in most Melbourne residential zones — only a building permit, which we facilitate for you.</p>
+    <a href="permit-guide.html">Read the permit guide →</a>
+  </div>
+</div>
+
+<!-- ── Content ── */
+<div class="content-section">
+
+  <!-- Why modular -->
+  <div class="why-grid">
+    <div>
+      <h2 style="font-weight:400; margin-bottom:18px; font-size:22px;">Why Factory-Built?</h2>
+      <p style="font-size:14px; color:#555; line-height:1.9; margin-bottom:14px;">Traditional onsite builds depend on weather, multiple trades showing up on time, and site-by-site material decisions. Factory production eliminates all of that variability — every panel is cut, fitted, and inspected under controlled conditions before it leaves the factory.</p>
+      <p style="font-size:14px; color:#555; line-height:1.9;">The result is a more consistent finish, faster installation, and a structure that meets 7-star energy efficiency from day one.</p>
+    </div>
+    <div class="highlight-box">
+      <h3>What's included in every model</h3>
+      <p>All models are delivered with structural framing, external cladding, internal lining, insulation to 7-star standard, windows and doors, kitchen and bathroom fit-out, and flooring. Site connections (plumbing, electrical, drainage) are completed by licensed trades during installation.</p>
+    </div>
+  </div>
+
+  <!-- Models -->
+  <div class="models-header">
+    <h2>The Collection</h2>
+    <p style="color:#666; font-size:13px;">Click any model to enquire, or explore the 3D virtual walkthrough.</p>
+  </div>
+
+  <!-- Type A -->
+  <div class="model-full">
+    <div class="model-full-grid">
+      <div class="model-images">
+        <img src="images/sparrowden-1.jpg" alt="Type A Sparrowden exterior">
+        <img src="images/sparrowden-2.jpg" alt="Type A Sparrowden interior">
+        <img src="images/sparrowden-3.jpg" alt="Type A Sparrowden kitchen">
+        <img src="images/sparrowden-4.jpg" alt="Type A Sparrowden bathroom">
+      </div>
+      <div class="model-detail">
+        <p class="model-tag">Type A · Studio</p>
+        <p class="model-name">Sparrowden</p>
+        <p class="model-desc">A high-efficiency architectural studio designed for narrow urban blocks where space is at a premium. Ideal for a single occupant or as a home office with sleeping accommodation.</p>
+        <div class="model-specs">
+          <div class="spec-item">
+            <div class="spec-val">20.3</div>
+            <div class="spec-label">m²</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-val">Studio</div>
+            <div class="spec-label">Configuration</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-val">7★</div>
+            <div class="spec-label">Energy rating</div>
+          </div>
+        </div>
+        <div class="model-actions">
+          <a href="#Contact" class="btn-enquire-lg">Enquire About This Model</a>
+          <a href="https://vr.justeasy.cn/view/dry17431576ai2j7-1743165560.html" class="btn-vr" target="_blank"><i class="fas fa-cube" style="margin-right:6px;"></i>3D Walkthrough</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type B -->
+  <div class="model-full">
+    <div class="model-full-grid reverse">
+      <div class="model-images">
+        <img src="images/sunloft-1.jpg" alt="Type B Sunloft exterior">
+        <img src="images/sunloft-2.jpg" alt="Type B Sunloft interior">
+        <img src="images/sunloft-3.jpg" alt="Type B Sunloft bedroom">
+        <img src="images/sunloft-4.jpg" alt="Type B Sunloft bathroom">
+      </div>
+      <div class="model-detail">
+        <p class="model-tag">Type B · 1 Bedroom</p>
+        <p class="model-name">Sunloft</p>
+        <p class="model-desc">Optimised for natural light with generous glazing and a contemporary open-plan living and kitchen area. Well-suited to long-term rental or accommodating an adult family member.</p>
+        <div class="model-specs">
+          <div class="spec-item">
+            <div class="spec-val">40.6</div>
+            <div class="spec-label">m²</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-val">1 Bed</div>
+            <div class="spec-label">Configuration</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-val">7★</div>
+            <div class="spec-label">Energy rating</div>
+          </div>
+        </div>
+        <div class="model-actions">
+          <a href="#Contact" class="btn-enquire-lg">Enquire About This Model</a>
+          <a href="https://vr.justeasy.cn/view/15743252q00g2398-1743306472.html" class="btn-vr" target="_blank"><i class="fas fa-cube" style="margin-right:6px;"></i>3D Walkthrough</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type C -->
+  <div class="model-full">
+    <div class="model-full-grid">
+      <div class="model-images">
+        <img src="images/wavercharm-1.jpg" alt="Type C Wavercharm exterior">
+        <img src="images/wavercharm-2.jpg" alt="Type C Wavercharm interior">
+        <img src="images/wavercharm-3.jpg" alt="Type C Wavercharm living area">
+        <img src="images/wavercharm-4.jpg" alt="Type C Wavercharm bathroom">
+      </div>
+      <div class="model-detail">
+        <p class="model-tag">Type C · Contemporary</p>
+        <p class="model-name">Wavercharm</p>
+        <p class="model-desc">A versatile secondary dwelling with a minimal footprint. The Wavercharm sits between the studio and one-bedroom categories — well-proportioned for a compact block or as a guest suite.</p>
+        <div class="model-specs">
+          <div class="spec-item">
+            <div class="spec-val">29.8</div>
+            <div class="spec-label">m²</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-val">Studio+</div>
+            <div class="spec-label">Configuration</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-val">7★</div>
+            <div class="spec-label">Energy rating</div>
+          </div>
+        </div>
+        <div class="model-actions">
+          <a href="#Contact" class="btn-enquire-lg">Enquire About This Model</a>
+          <a href="https://vr.justeasy.cn/view/l8ag1743318u8x34-1743319278.html" class="btn-vr" target="_blank"><i class="fas fa-cube" style="margin-right:6px;"></i>3D Walkthrough</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type D -->
+  <div class="model-full">
+    <div class="model-full-grid reverse">
+      <div class="model-images">
+        <img src="images/cosybay-1.jpg" alt="Type D Cosybay exterior">
+        <img src="images/cosybay-2.jpg" alt="Type D Cosybay living area">
+        <img src="images/cosybay-3.jpg" alt="Type D Cosybay bedroom">
+        <img src="images/cosybay-4.jpg" alt="Type D Cosybay bathroom">
+      </div>
+      <div class="model-detail">
+        <p class="model-tag">Type D · 2 Bedroom</p>
+        <p class="model-name">Cosybay</p>
+        <p class="model-desc">Our flagship model — maximising the 60m² planning-permit-free threshold. Two bedrooms, full kitchen, separate bathroom, and generous living space. The strongest rental yield of the range.</p>
+        <div class="model-specs">
+          <div class="spec-item">
+            <div class="spec-val">59.6</div>
+            <div class="spec-label">m²</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-val">2 Bed</div>
+            <div class="spec-label">Configuration</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-val">7★</div>
+            <div class="spec-label">Energy rating</div>
+          </div>
+        </div>
+        <div class="model-actions">
+          <a href="#Contact" class="btn-enquire-lg">Enquire About This Model</a>
+          <a href="https://vr.justeasy.cn/view/174g3xy3829vx090-1743329241.html" class="btn-vr" target="_blank"><i class="fas fa-cube" style="margin-right:6px;"></i>3D Walkthrough</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── CTA strip ── -->
+<div class="cta-strip">
+  <h2>See the Display Home</h2>
+  <p>Our 43m² display home is open by appointment in Braeside. Come and experience the build quality in person before you decide.</p>
+  <a href="#Contact" class="btn-primary">Book a Visit</a>
+  <a href="building-process.html" class="btn-ghost-dark">How It Works</a>
+</div>
+
+<!-- ── Contact ── -->
+<div class="contact-wrap" id="Contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <a href="https://maps.google.com/?q=Edge+Business+Park+Braeside+VIC+3195" target="_blank" class="contact-detail">
+        <i class="fas fa-map-marker-alt"></i> Edge Business Park, Braeside VIC 3195
+      </a>
+      <a href="mailto:sales@waverleygrannyflats.com.au" class="contact-detail">
+        <i class="fas fa-envelope"></i> sales@waverleygrannyflats.com.au
+      </a>
+      <a href="tel:0391125758" class="contact-detail">
+        <i class="fas fa-phone-alt"></i> <span><strong>Admin:</strong> 03 9112 5758</span>
+      </a>
+      <a href="tel:0419575252" class="contact-detail">
+        <i class="fas fa-mobile-alt"></i> <span><strong>Sales:</strong> 0419 575 252</span>
+      </a>
+      <div style="margin-top: 36px; padding-top: 30px; border-top: 1px solid #e0e0e0;">
+        <p style="font-size: 12px; color: #999; margin-bottom: 14px; letter-spacing: 1px; text-transform: uppercase;">Display Home Hours</p>
+        <p style="font-size: 13px; color: #666;">By appointment — Mon to Sat</p>
+        <p style="font-size: 13px; color: #666;">Edge Business Park, Braeside VIC</p>
+      </div>
+    </div>
+    <div>
+      <p style="font-size: 13px; color: #666; margin-bottom: 24px;">Tell us about your project and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="interest">I'm interested in</label>
+          <select id="interest" name="interest">
+            <option value="">Select an option…</option>
+            <option>Type A Sparrowden (20.3m²)</option>
+            <option>Type B Sunloft (40.6m²)</option>
+            <option>Type C Wavercharm (29.8m²)</option>
+            <option>Type D Cosybay (59.6m²)</option>
+            <option>Not sure yet — just exploring</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" placeholder="Suburb, block size, timeline, any questions…"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<div class="footer-note">
+  © 2025 Waverley Granny Flats. All rights reserved. &nbsp;|&nbsp;
+  <a href="permit-guide.html">Permit Guide</a> &nbsp;|&nbsp;
+  <a href="diy-kit.html">DIY Owner Builder</a> &nbsp;|&nbsp;
+  <a href="building-process.html">Building Process</a>
+  <br><br>
+  <span style="color:#444;">*Timeline is a target estimate subject to independent consultant processing and site variables. Pricing is indicative — contact us for a site-specific quote.</span>
+</div>
+
+</body>
+</html>
